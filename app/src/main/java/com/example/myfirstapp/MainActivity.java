@@ -1,14 +1,16 @@
 package com.example.myfirstapp;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.example.myfirstapp.pertemuan5.ListActivity;
+import com.example.myfirstapp.pertemuan5.RecyclerActivity;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -56,6 +58,13 @@ public class MainActivity extends AppCompatActivity {
         @Override
         public void onClick(View v) {
             Intent intent = new Intent(MainActivity.this, ListActivity.class);
+            startActivity(intent);
+        }
+    });
+    btnRecycler.setOnClickListener(new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            Intent intent = new Intent(MainActivity.this, RecyclerActivity.class);
             startActivity(intent);
         }
     });
