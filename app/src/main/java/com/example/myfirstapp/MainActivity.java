@@ -8,6 +8,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.example.myfirstapp.pertemuan5.ListActivity;
+
 
 public class MainActivity extends AppCompatActivity {
 
@@ -18,13 +20,18 @@ public class MainActivity extends AppCompatActivity {
 
         //variabel
         final TextView txtView = (TextView)findViewById(R.id.mainActivityTextView);
-        Button myBtn = (Button)findViewById(R.id.Button);
+        Button myBtn = (Button)findViewById(R.id.btnEnter);
         final EditText myEditText = (EditText)findViewById(R.id.editText1);
         Button btnHelp = (Button)findViewById(R.id.btnHelp);
 
+        //pertemuan2
+        Button btnList = (Button)findViewById(R.id.buttonListView);
+        Button btnRecycler = (Button)findViewById(R.id.buttonRecyclerView);
+        Button btnCard = (Button)findViewById(R.id.buttonCardView);
+
         //action
         txtView.setText(R.string.text_hello_world);
-        btnEnter.setOnClickListener(new View.OnClickListener() {
+        myBtn.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View view) {
@@ -36,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
     btnHelp.setOnClickListener(new View.OnClickListener() {
         @Override
         public void onClick(View v) {
-            Intent intent = new Intent( packageContext: MainActivity.this,helpActivity.class);;
+               Intent intent = new Intent( MainActivity.this,HelpActivity.class);;
             Bundle b = new Bundle();
 
             b.putString("help_string",myEditText.getText().toString());
@@ -45,7 +52,13 @@ public class MainActivity extends AppCompatActivity {
             startActivity(intent);
         }
     });
-
+    btnList.setOnClickListener(new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            Intent intent = new Intent(MainActivity.this, ListActivity.class);
+            startActivity(intent);
+        }
+    });
 
     }
 

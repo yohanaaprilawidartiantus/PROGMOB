@@ -66,7 +66,7 @@
                     app:layout_constraintTop_toBottomOf="@+id/mainActivityTextView">
 
                     <Button
-                        android:id="@+id/Button"
+                        android:id="@+id/btnEnter"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:text="Enter" />
