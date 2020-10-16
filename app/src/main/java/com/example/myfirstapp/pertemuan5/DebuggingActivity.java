@@ -13,12 +13,12 @@ import com.example.myfirstapp.R;
 import java.util.ArrayList;
 import java.util.List;
 
-public class RecyclerActivity extends AppCompatActivity {
+public class DebuggingActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_recycler);
+        setContentView(R.layout.activity_debugging);
 
         RecyclerView rv = (RecyclerView)findViewById(R.id.rvLatihan);
         MahasiswaRecyclerAdapter mahasiswaRecyclerAdapter;
@@ -27,11 +27,11 @@ public class RecyclerActivity extends AppCompatActivity {
         List<Mahasiswa> mahasiswaList = new ArrayList<Mahasiswa>();
 
         //generate data mahasiswa
-        Mahasiswa m1 = new Mahasiswa("cindi", "72170001", "0998777543");
-        Mahasiswa m2 = new Mahasiswa("lili", "72170002", "0458950205");
-        Mahasiswa m3 = new Mahasiswa("nini", "72170003", "0952578897");
-        Mahasiswa m4 = new Mahasiswa("clara", "72170004", "254788989");
-        Mahasiswa m5 = new Mahasiswa("keke", "72170005", "3476821256");
+        Mahasiswa m1 = new Mahasiswa("Argo","72110101","084646464646");
+        Mahasiswa m2 = new Mahasiswa("Halim","72110101","084646464646");
+        Mahasiswa m3 = new Mahasiswa("Jong Jek Siang","72110101","084646464646");
+        Mahasiswa m4 = new Mahasiswa("Katon","72110101","084646464646");
+        Mahasiswa m5 = new Mahasiswa("Yetli","72110101","084646464646");
 
         mahasiswaList.add(m1);
         mahasiswaList.add(m2);
@@ -39,12 +39,12 @@ public class RecyclerActivity extends AppCompatActivity {
         mahasiswaList.add(m4);
         mahasiswaList.add(m5);
 
-        mahasiswaRecyclerAdapter = new MahasiswaRecyclerAdapter(RecyclerActivity.this);
-        mahasiswaRecyclerAdapter.setMahasiswaList(mahasiswaList);
+        List<Mahasiswa> mahasiswaListDebug = new ArrayList<Mahasiswa>();
 
-        rv.setLayoutManager(new LinearLayoutManager(RecyclerActivity.this));
+        mahasiswaRecyclerAdapter = new MahasiswaRecyclerAdapter(DebuggingActivity.this);
+        mahasiswaRecyclerAdapter.setMahasiswaList(mahasiswaListDebug);
+
+        rv.setLayoutManager(new LinearLayoutManager(DebuggingActivity.this));
         rv.setAdapter(mahasiswaRecyclerAdapter);
-
-
     }
 }

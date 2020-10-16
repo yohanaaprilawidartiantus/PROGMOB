@@ -33,18 +33,16 @@ public class ListActivity extends AppCompatActivity {
         sp.setAdapter(aa);
 
 
-        lv.setOnClickListener(new AdapterView.OnItemClickListener(){
+        lv.setOnClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int i, long id) {
-                Toast.makeText(ListActivity.this, "Anda memilih " + items[i], Toast.LENGTH_LONG).show();
-               // Toast.makeText(ListActivity.this,"Anda memilih " + items[i],Toast.LENGTH_LONG).show();
-            }
+                Toast.makeText(ListActivity.this, "Anda memilih " + items[i], Toast.LENGTH_LONG).show()}
         });
 
         sp.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int i, long id) {
-                Toast.makeText(ListActivity.this, "Anda memilih" + items[i],Toast.LENGTH_LONG.);
+                Toast.makeText(ListActivity.this, "Anda memilih" + items[i],Toast.LENGTH_LONG);
             }
 
             @Override
